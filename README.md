@@ -14,6 +14,29 @@ cd minecraft-scenes
 npm install
 ```
 
+## Post Install Instructions
+
+```text
+PS E:\coding\minecraft-scenes> node src/presets/dragon-curves.js
+🔧 Generating dragon curve (depth 12)...
+   Raw path: 8192 points, bounding box...
+   Volume: 107 × 13 × 128
+
+Schematic: 107×13×128
+Origin: world (0, 1, 0)
+  [0] minecraft:air
+  [1] minecraft:gray_concrete
+  [2] minecraft:gold_block
+
+✅  Saved ./output/dragon-curves.schematic
+    Dimensions: 107 × 13 × 128
+    Block types: 3
+    File size:   228 KB
+
+📁  Open in Minecraft with Litematica → "Load from file"
+   Then paste at world coordinates (0, 1, 0)
+```
+
 ## Generate a Structure
 
 ```bash
