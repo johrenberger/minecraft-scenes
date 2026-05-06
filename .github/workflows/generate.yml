@@ -1,0 +1,35 @@
+name: Generate Schematics
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - name: Install deps
+        run: npm ci
+
+      - name: Generate Dragon Curve
+        run: node src/presets/dragon-curves.js
+
+      - name: Commit & push if changed
+        run: |
+          git config --local credential.helper ""
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add output/
+          git diff-index --quiet HEAD -- output/ || git commit -m "ci: regenerate schematic output"
+          git push origin main
