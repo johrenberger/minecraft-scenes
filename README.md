@@ -48,7 +48,7 @@ Output: `output/dragon-curves.schematic`
 ## Import Into Minecraft
 
 **Litematica (Fabric)** — recommended:
-1. Install Fabric + Litematica mod
+1. Install Fabric + Litematica mod: https://www.youtube.com/watch?v=aMZSXAKZzpo
 2. Open Litematica → *Place Structures* → *Load from File*
 3. Select the `.schematic` file and paste it in your world
 
